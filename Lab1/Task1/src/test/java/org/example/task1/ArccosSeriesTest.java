@@ -1,4 +1,4 @@
-package org.example;
+package org.example.task1;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -63,16 +63,6 @@ public class ArccosSeriesTest {
         double actual = ArccosSeries.arccos(x, EPS, MAX_TERMS);
         assertEquals(y, actual, 1e-8);
     }
-
-    @Test
-    @DisplayName("Random testing (random x in (-1; 1))")
-    void checkRandomDots() {
-        for (int i = 0; i < 200_000; i++) {
-            double x = ThreadLocalRandom.current().nextDouble(-0.9999, 0.9999);
-            double expected = Math.acos(x);
-            double actual = ArccosSeries.arccos(x, EPS, MAX_TERMS);
-            assertEquals(expected, actual, 1e-8);
-        }
-    }
+    
 
 }

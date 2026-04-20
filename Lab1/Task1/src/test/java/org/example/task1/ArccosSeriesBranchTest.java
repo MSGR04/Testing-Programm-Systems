@@ -1,11 +1,24 @@
-package org.example;
+package org.example.task1;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.lang.reflect.Constructor;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ArccosSeriesBranchTest {
+
+    @Test
+    @DisplayName("Utility constructor must be callable via reflection")
+    void coversUtilityConstructor() throws Exception {
+        Constructor<ArccosSeries> constructor = ArccosSeries.class.getDeclaredConstructor();
+        constructor.setAccessible(true);
+
+        ArccosSeries instance = constructor.newInstance();
+
+        assertNotNull(instance);
+    }
 
     @Test
     @DisplayName("Branch x >= 0 is covered (x = 0.5)")
@@ -14,13 +27,12 @@ public class ArccosSeriesBranchTest {
         double actual = ArccosSeries.arccos(x, 1e-12, 100000);
         assertEquals(Math.acos(x), actual, 1e-10);
     }
+
     @Test
     @DisplayName("Covers loop termination by maxTerms (no break)")
     void coversLoopMaxTermsExit() {
         double x = 0.5;
-
         double eps = 1e-30;
-
         int maxTerms = 1;
 
         double result = ArccosSeries.arccos(x, eps, maxTerms);
@@ -68,5 +80,4 @@ public class ArccosSeriesBranchTest {
                 () -> assertThrows(IllegalArgumentException.class, () -> ArccosSeries.arccos(0.0, 1e-12, -5))
         );
     }
-
 }
