@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: JUnit Jupiter
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0 s <<< FAILURE! -- in JUnit Jupiter
+JUnit Jupiter.JUnit Jupiter -- Time elapsed: 0 s <<< ERROR!
+org.junit.platform.commons.JUnitException: TestEngine with ID 'junit-jupiter' failed to execute tests
+Caused by: org.junit.platform.commons.JUnitException: Error executing tests for engine junit-jupiter
+Caused by: org.junit.platform.commons.JUnitException: Configuration parameter 'fixed.parallelism' must be set
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+

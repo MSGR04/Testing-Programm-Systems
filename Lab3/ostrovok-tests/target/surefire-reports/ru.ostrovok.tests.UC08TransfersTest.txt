@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: ru.ostrovok.tests.UC08TransfersTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 256.7 s -- in ru.ostrovok.tests.UC08TransfersTest

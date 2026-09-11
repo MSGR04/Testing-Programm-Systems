@@ -1,0 +1,12 @@
+package org.example.task2;
+
+public enum DfsPoint {
+    START,
+    ENTER_VERTEX,
+    MARK_AS_VISITED,
+    CHECK_NEIGHBOR,
+    GO_TO_UNVISITED_NEIGHBOR,
+    SKIP_ALREADY_VISITED_NEIGHBOR,
+    EXIT_VERTEX,
+    FINISH
+}
